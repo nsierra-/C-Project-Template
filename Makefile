@@ -57,6 +57,8 @@ test:			all
 re:				fclean all
 
 subm:
+				git submodule add -b 42 https://github.com/nsierra-/ftlst.git
+				git submodule add -b master https://github.com/nsierra-/libft.git
 				git submodule update --init --remote --recursive
 
 .PHONY:
