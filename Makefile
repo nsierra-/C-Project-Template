@@ -31,8 +31,7 @@ IFLAGS		=	-I./inc/ -I$(LIBFT_DIR) -I$(FTLST_DIR)
 LDFLAGS		=	-L$(LIBFT_DIR) -lft -L$(FTLST_DIR) -lftlst -ltermcap
 
 
-$(NAME):		$(INC) $(OBJ)
-				git submodule update --init --remote --recursive
+$(NAME):		subm $(INC) $(OBJ)
 				$(MAKE) -C ftlst/
 				$(MAKE) -C libft/
 				$(CC) $(CFLAGS) $(LDFLAGS) $(OBJ) -o $@
@@ -56,5 +55,8 @@ test:			all
 				./$(NAME)
 
 re:				fclean all
+
+subm:
+				git submodule update --init --remote --recursive
 
 .PHONY:
