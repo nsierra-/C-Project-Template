@@ -28,7 +28,7 @@ MAKE		=	make
 
 CFLAGS		=	-g3 -Wall -Wextra -Werror
 IFLAGS		=	-I./inc/ -I$(LIBFT_DIR) -I$(FTLST_DIR)
-LDFLAGS		=	-L$(LIBFT_DIR) -lft -L$(FTLST_DIR) -lftlst -ltermcap
+LDFLAGS		=	-L$(LIBFT_DIR) -lft -L$(FTLST_DIR) -lftlst
 
 
 $(NAME):		subm $(INC) $(OBJ)
