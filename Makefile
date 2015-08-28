@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	project
+NAME		=	obj
 
-INC_FILES	=	project.h
+INC_FILES	=	obj.h
 
 SRC_FILES	=	main.c
 
@@ -26,7 +26,7 @@ OBJ			=	$(SRC:.c=.o)
 CC			=	gcc
 MAKE		=	make
 
-CFLAGS		=	-g3 -Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror
 IFLAGS		=	-I./inc/ -I$(LIBFT_DIR) -I$(FTLST_DIR)
 LDFLAGS		=	-L$(LIBFT_DIR) -lft -L$(FTLST_DIR) -lftlst
 
