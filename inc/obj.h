@@ -32,39 +32,24 @@ typedef struct	s_vec3
 typedef struct	s_vertex
 {
 	t_vec3		position;
-	t_vec2		texture;
+	t_vec3		color;
 	t_vec3		normal;
+	t_vec2		uv;
 }				t_vertex;
 
-typedef struct	s_face
+typedef struct	s_polygon
 {
-	t_lst		*composition;
-}				t_face;
+	t_lst		*vertices;
+}				t_polygon;
 
-static const char *g_types_tokens[] =
+typedef struct	s_obj_data
 {
-	"#",
-	"v",
-	"vt",
-	"f",
-	NULL
-};
+	t_lst		*positions;
+	t_lst		*colors;
+	t_lst		*normals;
+	t_lst		*polygons;
+}				t_obj_data;
 
-enum	e_obj_type
-{
-	COMMENT,
-	VERTEX,
-	TEXTURE,
-	FACE
-};
-
-typedef struct	s_obj_infos
-{
-	t_lst		*v;
-	t_lst		*t;
-	t_lst		*f;
-}				t_obj_infos;
-
-int	(*g_extract[4])(char **, t_obj_infos *);
+t_obj_data	*parse_obj(const char *file_path);
 
 #endif

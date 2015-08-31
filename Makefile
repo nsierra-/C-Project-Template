@@ -12,9 +12,17 @@
 
 NAME		=	obj
 
-INC_FILES	=	obj.h
+INC_FILES	=	obj.h \
+				obj_internal.h
 
-SRC_FILES	=	main.c
+SRC_FILES	=	main.c \
+				extract_polygon.c \
+				extract_position.c \
+				extract_color.c \
+				extract_normal.c \
+				extract_vec3.c \
+				parse_line.c \
+				parse_obj.c
 
 FTLST_DIR	=	./ftlst
 LIBFT_DIR	=	./libft
