@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include "libft.h"
-#include "ftlst.h"
 #include "obj.h"
 
 int				main(void)
