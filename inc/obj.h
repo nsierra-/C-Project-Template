@@ -50,8 +50,8 @@ typedef struct	s_obj_data
 	t_lst		*polygons;
 }				t_obj_data;
 
-t_obj_data	*obj_parse(const char *file_path);
-void		obj_print_data(const t_obj_data *data);
-void		obj_delete_data(t_obj_data **data);
+t_obj_data		*obj_parse(const char *file_path);
+void			obj_print_data(const t_obj_data *data);
+void			obj_delete_data(t_obj_data **data);
 
 #endif
