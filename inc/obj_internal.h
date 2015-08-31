@@ -4,6 +4,7 @@
 
 # include "obj.h"
 # include "obj_tokens.h"
+# define BUFF_SIZE 512
 # define TYPE_COUNT 5
 # define DEFAULT_CODE -9
 

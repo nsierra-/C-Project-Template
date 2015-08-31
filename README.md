@@ -12,11 +12,12 @@ Currently supported :
   - f
 
   See ```obj.h```for top-level functions documentation.
-  
+
 # Use Case
 
 ```c
 
+#include <stdlib.h>
 #include "obj.h"
 
 int				main(void)
