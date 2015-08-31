@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "obj_internal.h"
 
-void		print_vec3(void *data)
+static void		print_vec3(void *data)
 {
-	t_vec3	*pos;
+	t_vec3		*pos;
 
 	pos = (t_vec3 *)data;
 	printf("\tx = %f\n", pos->x);
@@ -11,16 +11,16 @@ void		print_vec3(void *data)
 	printf("\tz = %f\n\n", pos->z);
 }
 
-void		print_vec2(void *data)
+static void		print_vec2(void *data)
 {
-	t_vec3	*pos;
+	t_vec3		*pos;
 
 	pos = (t_vec3 *)data;
 	printf("\tx = %f\n", pos->x);
 	printf("\ty = %f\n\n", pos->y);
 }
 
-void			print_poly_component(void *data)
+static void		print_poly_component(void *data)
 {
 	t_vertex	*component;
 
@@ -32,9 +32,9 @@ void			print_poly_component(void *data)
 	puts("***");
 }
 
-void		print_polygons(void *data)
+static void		print_polygons(void *data)
 {
-	t_lst	*components;
+	t_lst		*components;
 
 	puts("---");
 	components = (t_lst *)((t_polygon *)data)->vertices;
@@ -42,7 +42,7 @@ void		print_polygons(void *data)
 	puts("---");
 }
 
-void	obj_print_data(const t_obj_data *data)
+void			obj_print_data(const t_obj_data *data)
 {
 	puts("--- POSITIONS ---");
 	lst_print(data->positions, print_vec3, 0);

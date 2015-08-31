@@ -21,7 +21,9 @@ static int		int_from_token(const char **tokens, int index)
 	return (ret);
 }
 
-static void		fill_vertex_position(const char **tokens, t_vertex *vertex, t_obj_data *data)
+static void		fill_vertex_position(const char **tokens,
+	t_vertex *vertex,
+	t_obj_data *data)
 {
 	int			index;
 	t_lst		*positions;
@@ -38,7 +40,6 @@ static void		fill_vertex_position(const char **tokens, t_vertex *vertex, t_obj_d
 	}
 	else if (index >= 0 && lst_get_size(positions) > (size_t)index)
 	{
-		puts("There");
 		vertex->position.x = 0;
 		vertex->position.y = 0;
 		vertex->position.z = 0;
@@ -47,7 +48,10 @@ static void		fill_vertex_position(const char **tokens, t_vertex *vertex, t_obj_d
 		parser_die("Invalid index for a position.");
 }
 
-static void		fill_vertex_color(const char **tokens, t_vertex *vertex, int no_texture, t_obj_data *data)
+static void		fill_vertex_color(const char **tokens,
+	t_vertex *vertex,
+	int no_texture,
+	t_obj_data *data)
 {
 	int			i;
 	t_lst		*colors;
@@ -72,7 +76,10 @@ static void		fill_vertex_color(const char **tokens, t_vertex *vertex, int no_tex
 		parser_die("Invalid index for color.");
 }
 
-static void		fill_vertex_normal(const char **tokens, t_vertex *vertex, int no_texture, t_obj_data *data)
+static void		fill_vertex_normal(const char **tokens,
+	t_vertex *vertex,
+	int no_texture,
+	t_obj_data *data)
 {
 	int			i;
 	t_lst		*normals;
@@ -99,7 +106,10 @@ static void		fill_vertex_normal(const char **tokens, t_vertex *vertex, int no_te
 		parser_die("Invalid index for normal.");
 }
 
-static int		add_vertex(const char **tokens, int no_texture, t_lst *vertices, t_obj_data *data)
+static int		add_vertex(const char **tokens,
+	int no_texture,
+	t_lst *vertices,
+	t_obj_data *data)
 {
 	t_vertex	*new_vertex;
 
@@ -115,7 +125,9 @@ static int		add_vertex(const char **tokens, int no_texture, t_lst *vertices, t_o
 	return (1);
 }
 
-int				parse_polygon_components(const char **tokens, t_polygon *new_polygon, t_obj_data *data)
+int				parse_polygon_components(const char **tokens,
+	t_polygon *new_polygon,
+	t_obj_data *data)
 {
 	int			i;
 	int			no_texture;
@@ -129,7 +141,7 @@ int				parse_polygon_components(const char **tokens, t_polygon *new_polygon, t_o
 		no_texture = 0;
 		if (strstr(tokens[i], "//"))
 			no_texture = 1;
-		component_tokens = ft_split(tokens[i], POLYG_COMPONENT_SEPARATOR_TOKEN"\n");
+		component_tokens = ft_split(tokens[i], "/\n");
 		if (!add_vertex((const char **)component_tokens, no_texture, new_polygon->vertices, data))
 			return (0);
 		++i;

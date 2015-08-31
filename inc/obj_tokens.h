@@ -7,6 +7,4 @@
 # define NORMAL_TOKEN "vn"
 # define POLYGON_TOKEN "f"
 
-# define POLYG_COMPONENT_SEPARATOR_TOKEN "/"
-
 #endif

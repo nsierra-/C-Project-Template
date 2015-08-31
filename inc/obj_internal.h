@@ -54,5 +54,6 @@ static const t_type_match	g_type_matches[] = {
 };
 
 unsigned int				g_current_line;
+t_obj_data					*g_current_data;
 
 #endif

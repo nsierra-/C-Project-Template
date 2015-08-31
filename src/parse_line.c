@@ -2,7 +2,7 @@
 #include "obj_internal.h"
 #include "libft.h"
 
-static int	(*get_parse_function(const char *input))(const char **, t_obj_data *)
+static int	(*get_parse_func(const char *input))(const char **, t_obj_data *)
 {
 	int		i;
 
@@ -23,7 +23,7 @@ int			parse_line(char *line, t_obj_data *data)
 
 	if (!(tokens = ft_split(line, " \t")))
 		return (0);
-	parse_function = get_parse_function(tokens[0]);
+	parse_function = get_parse_func(tokens[0]);
 	if (!parse_function)
 	{
 		ft_free_tab(tokens);
