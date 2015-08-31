@@ -25,6 +25,8 @@ SRC_FILES	=	main.c \
 				parse_vec3.c \
 				parse_vec2.c \
 				parse_line.c \
+				add_vertex.c \
+				tokens_utils.c \
 				obj_parse.c \
 				obj_print_data.c \
 				obj_delete_data.c

@@ -28,7 +28,7 @@ t_obj_data		*obj_parse(const char *file_path)
 	{
 		if (line[0] == '\n')
 			continue ;
-		if (!parse_line(line, data))
+		if (!parse_line(line))
 			return (NULL);
 	}
 	fclose(fp);

@@ -2,7 +2,7 @@
 #include "obj_internal.h"
 #include "libft.h"
 
-static int	(*get_parse_func(const char *input))(const char **, t_obj_data *)
+static int	(*get_parse_func(const char *input))(const char **)
 {
 	int		i;
 
@@ -16,10 +16,10 @@ static int	(*get_parse_func(const char *input))(const char **, t_obj_data *)
 	return (NULL);
 }
 
-int			parse_line(char *line, t_obj_data *data)
+int			parse_line(char *line)
 {
 	char	**tokens;
-	int		(*parse_function)(const char **, t_obj_data *);
+	int		(*parse_function)(const char **);
 
 	if (!(tokens = ft_split(line, " \t")))
 		return (0);
@@ -29,7 +29,7 @@ int			parse_line(char *line, t_obj_data *data)
 		ft_free_tab(tokens);
 		parser_die("Unknown data type.");
 	}
-	(*parse_function)((const char **)(tokens + 1), data);
+	(*parse_function)((const char **)(tokens + 1));
 	ft_free_tab(tokens);
 	return (1);
 }

@@ -2,7 +2,7 @@
 #include "ftlst.h"
 #include "obj_internal.h"
 
-int			parse_normal(const char **tokens, t_obj_data *data)
+int			parse_normal(const char **tokens)
 {
 	t_vec3	*new_normal;
 
@@ -13,6 +13,6 @@ int			parse_normal(const char **tokens, t_obj_data *data)
 		free(new_normal);
 		parser_die("A normal needs three arguments.");
 	}
-	lst_push_back(data->normals, new_normal);
+	lst_push_back(g_current_data->normals, new_normal);
 	return (1);
 }

@@ -2,7 +2,7 @@
 #include "ftlst.h"
 #include "obj_internal.h"
 
-int			parse_position(const char **tokens, t_obj_data *data)
+int			parse_position(const char **tokens)
 {
 	t_vec3	*new_position;
 
@@ -13,6 +13,6 @@ int			parse_position(const char **tokens, t_obj_data *data)
 		free(new_position);
 		return (0);
 	}
-	lst_push_back(data->positions, new_position);
+	lst_push_back(g_current_data->positions, new_position);
 	return (1);
 }

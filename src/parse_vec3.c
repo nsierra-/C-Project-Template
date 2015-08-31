@@ -3,7 +3,7 @@
 
 int		parse_vec3(const char **tokens, t_vec3 *vector)
 {
-	if (!tokens[0] || !tokens[1] || !tokens[2])
+	if (!tokens_are_enough(tokens, 3))
 		return (0);
 	vector->x = atof(tokens[0]);
 	vector->y = atof(tokens[1]);

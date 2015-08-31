@@ -10,21 +10,26 @@
 typedef struct				s_type_match
 {
 	const char				*token;
-	int						(*f)(const char **, t_obj_data *);
+	int						(*f)(const char **);
 }							t_type_match;
 
 int							parse_vec3(const char **tokens, t_vec3 *vector);
 int							parse_vec2(const char **tokens, t_vec3 *vector);
 
-int							parse_comment(const char **tokens, t_obj_data *d);
-int							parse_position(const char **tokens, t_obj_data *d);
-int							parse_color(const char **tokens, t_obj_data *d);
-int							parse_normal(const char **tokens, t_obj_data *d);
-int							parse_polygon(const char **tokens, t_obj_data *d);
+int							parse_comment(const char **tokens);
+int							parse_position(const char **tokens);
+int							parse_color(const char **tokens);
+int							parse_normal(const char **tokens);
+int							parse_polygon(const char **tokens);
 
-int							parse_line(char *line, t_obj_data *d);
+int							parse_line(char *line);
 
 void						parser_die(const char *msg);
+
+int							add_vertex(
+								const char **tokens,
+								int no_texture,
+								t_lst *vertices);
 
 static const t_type_match	g_type_matches[] = {
 	{

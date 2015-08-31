@@ -7,4 +7,7 @@
 # define NORMAL_TOKEN "vn"
 # define POLYGON_TOKEN "f"
 
+int			token_to_int(const char **tokens, int index);
+int			tokens_are_enough(const char **tokens, int qty);
+
 #endif
