@@ -41,7 +41,7 @@ OBJ			=	$(SRC:.c=.o)
 CC			=	gcc
 MAKE		=	make
 
-CFLAGS		=	-Wall -Wextra -Werror -pedantic -g3
+CFLAGS		=	-Wall -Wextra -Werror -pedantic
 IFLAGS		=	-I./inc/ -I$(LIBFT_DIR) -I$(FTLST_DIR)
 LDFLAGS		=	-L$(LIBFT_DIR) -lft -L$(FTLST_DIR) -lftlst
 
