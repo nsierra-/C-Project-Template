@@ -3,7 +3,7 @@ Simple parser of Wavefront Obj file written in ANSI C.
 
 # About
 
-Work in progress.
+Work in progress (hence ```main.c```).
 
 Currently supported :
   - v
