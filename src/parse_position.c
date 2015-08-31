@@ -2,13 +2,13 @@
 #include "ftlst.h"
 #include "obj_internal.h"
 
-int			extract_position(const char **tokens, t_obj_data *data)
+int			parse_position(const char **tokens, t_obj_data *data)
 {
 	t_vec3	*new_position;
 
 	if (!(new_position = malloc(sizeof(t_vec3))))
 		return (0);
-	else if (!extract_vec3(tokens, new_position))
+	else if (!parse_vec3(tokens, new_position))
 	{
 		free(new_position);
 		return (0);

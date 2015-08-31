@@ -16,13 +16,18 @@ INC_FILES	=	obj.h \
 				obj_internal.h
 
 SRC_FILES	=	main.c \
-				extract_polygon.c \
-				extract_position.c \
-				extract_color.c \
-				extract_normal.c \
-				extract_vec3.c \
+				parser_die.c \
+				parse_comment.c \
+				parse_polygon.c \
+				parse_position.c \
+				parse_color.c \
+				parse_normal.c \
+				parse_vec3.c \
+				parse_vec2.c \
 				parse_line.c \
-				parse_obj.c
+				obj_parse.c \
+				obj_print_data.c \
+				obj_delete_data.c
 
 FTLST_DIR	=	./ftlst
 LIBFT_DIR	=	./libft
@@ -34,7 +39,7 @@ OBJ			=	$(SRC:.c=.o)
 CC			=	gcc
 MAKE		=	make
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -pedantic -g3
 IFLAGS		=	-I./inc/ -I$(LIBFT_DIR) -I$(FTLST_DIR)
 LDFLAGS		=	-L$(LIBFT_DIR) -lft -L$(FTLST_DIR) -lftlst
 

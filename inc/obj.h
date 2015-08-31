@@ -32,7 +32,7 @@ typedef struct	s_vec3
 typedef struct	s_vertex
 {
 	t_vec3		position;
-	t_vec3		color;
+	t_vec2		color;
 	t_vec3		normal;
 	t_vec2		uv;
 }				t_vertex;
@@ -50,6 +50,8 @@ typedef struct	s_obj_data
 	t_lst		*polygons;
 }				t_obj_data;
 
-t_obj_data	*parse_obj(const char *file_path);
+t_obj_data	*obj_parse(const char *file_path);
+void		obj_print_data(const t_obj_data *data);
+void		obj_delete_data(t_obj_data **data);
 
 #endif

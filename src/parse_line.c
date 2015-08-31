@@ -2,37 +2,34 @@
 #include "obj_internal.h"
 #include "libft.h"
 
-static int	determine_line_type(const char *input)
+static int	(*get_parse_function(const char *input))(const char **, t_obj_data *)
 {
 	int		i;
 
 	i = 0;
-	if (!strcmp(input, "\n"))
-		return (0);
-	while (g_obj_tokens[i])
+	while (g_type_matches[i].token && g_type_matches[i].f)
 	{
-		if (!strcmp(g_obj_tokens[i], input))
-			return (i);
+		if (!strcmp(g_type_matches[i].token, input))
+			return (g_type_matches[i].f);
 		++i;
 	}
-	return (-1);
+	return (NULL);
 }
 
 int			parse_line(char *line, t_obj_data *data)
 {
 	char	**tokens;
-	int		type;
+	int		(*parse_function)(const char **, t_obj_data *);
 
 	if (!(tokens = ft_split(line, " \t")))
 		return (0);
-	type = determine_line_type(tokens[0]);
-	if (type < 0)
+	parse_function = get_parse_function(tokens[0]);
+	if (!parse_function)
 	{
 		ft_free_tab(tokens);
-		return (0);
+		parser_die("Unknown data type.");
 	}
-	if (g_extract[type])
-		(*g_extract[type])((const char **)(tokens + 1), data);
+	(*parse_function)((const char **)(tokens + 1), data);
 	ft_free_tab(tokens);
 	return (1);
 }
