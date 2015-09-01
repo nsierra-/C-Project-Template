@@ -13,6 +13,6 @@ int			parse_color(const char **tokens)
 		return (0);
 	new_color->x = atof(tokens[0]);
 	new_color->y = atof(tokens[1]);
-	lst_push_back(g_current_data->colors, new_color);
+	lst_push_back(g_current_data->uvs, new_color);
 	return (1);
 }

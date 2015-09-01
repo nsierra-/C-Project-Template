@@ -27,7 +27,7 @@ static void		print_poly_component(void *data)
 	component = (t_vertex *)data;
 	puts("***");
 	print_vec3(&component->position);
-	print_vec2(&component->color);
+	print_vec2(&component->uv);
 	print_vec3(&component->normal);
 	puts("***");
 }
@@ -47,9 +47,9 @@ void			obj_print_data(const t_obj_data *data)
 	puts("--- POSITIONS ---");
 	lst_print(data->positions, print_vec3, 0);
 	puts("--- END POSITIONS ---");
-	puts("--- COLORS ---");
-	lst_print(data->colors, print_vec2, 0);
-	puts("--- END COLORS ---");
+	puts("--- UVS ---");
+	lst_print(data->uvs, print_vec2, 0);
+	puts("--- END UVS ---");
 	puts("--- NORMALS ---");
 	lst_print(data->normals, print_vec3, 0);
 	puts("--- END NORMALS ---");

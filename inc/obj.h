@@ -34,9 +34,9 @@ typedef struct	s_vec3
 typedef struct	s_vertex
 {
 	t_vec3		position;
-	t_vec2		color;
-	t_vec3		normal;
 	t_vec2		uv;
+	t_vec3		normal;
+	t_vec3		color;
 }				t_vertex;
 /*
 ** This struct stands for Obj's 'v' type. It is made of a list of t_vertex.
@@ -49,14 +49,14 @@ typedef struct	s_polygon
 ** Struct returned by parse_obj. It contains a list of everything in the file,
 ** where :
 **	- positions correspond to 'v' ;
-**	- colors correspond to 'vt' ;
+**	- uvs correspond to 'vt' ;
 **	- normals correspond to 'vn' ;
 **	- polygons correspond to 'f' ;
 */
 typedef struct	s_obj_data
 {
 	t_lst		*positions;
-	t_lst		*colors;
+	t_lst		*uvs;
 	t_lst		*normals;
 	t_lst		*polygons;
 }				t_obj_data;

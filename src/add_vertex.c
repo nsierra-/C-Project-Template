@@ -34,20 +34,20 @@ static void		fill_vertex_color(const char **tokens, t_vertex *vertex, int nt)
 	t_lst		*colors;
 	t_vec2		*color;
 
-	colors = g_current_data->colors;
+	colors = g_current_data->uvs;
 	i = DEFAULT_CODE;
 	if (!nt)
 		i = token_to_int(tokens, 1);
 	color = lst_data_at(colors, i);
 	if (color)
 	{
-		vertex->color.x = color->x;
-		vertex->color.y = color->y;
+		vertex->uv.x = color->x;
+		vertex->uv.y = color->y;
 	}
 	else if (i == DEFAULT_CODE || (i >= 0 && lst_get_size(colors) > (size_t)i))
 	{
-		vertex->color.x = 0;
-		vertex->color.y = 0;
+		vertex->uv.x = 0;
+		vertex->uv.y = 0;
 	}
 	else
 		parser_die("Invalid index for color.");

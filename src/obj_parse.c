@@ -8,7 +8,7 @@ static int		init_parser(t_obj_data *data)
 	g_current_line = 0;
 	g_current_data = data;
 	data->positions = new_lst();
-	data->colors = new_lst();
+	data->uvs = new_lst();
 	data->normals = new_lst();
 	data->polygons = new_lst();
 	return (1);

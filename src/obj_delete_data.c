@@ -14,7 +14,7 @@ void			obj_delete_data(t_obj_data **d)
 
 	data = *d;
 	lst_destroy(&data->positions, free);
-	lst_destroy(&data->colors, free);
+	lst_destroy(&data->uvs, free);
 	lst_destroy(&data->normals, free);
 	lst_destroy(&data->polygons, delete_polygons);
 	free(data);
