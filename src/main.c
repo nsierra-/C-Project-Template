@@ -19,5 +19,7 @@ int				main(void)
 	obj_data = obj_parse("test.test");
 	obj_print_data(obj_data);
 	obj_delete_data(&obj_data);
+	while (42)
+		;
 	return EXIT_SUCCESS;
 }

@@ -21,8 +21,12 @@ static int		parse_polygon_components(
 			nt = 1;
 		ctokens = ft_split(tokens[i], "/\n");
 		if (!add_vertex((const char **)ctokens, nt, new_polygon->vertices))
+		{
+			ft_free_tab(ctokens);
 			return (0);
+		}
 		++i;
+		ft_free_tab(ctokens);
 	}
 	return (1);
 }
