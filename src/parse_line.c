@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdio.h>
 #include "obj_internal.h"
 #include "libft.h"
 
@@ -21,11 +22,12 @@ int			parse_line(char *line)
 	char	**tokens;
 	int		(*parse_function)(const char **);
 
-	if (!(tokens = ft_split(line, " \t")))
+	if (!(tokens = ft_split(line, " \t\n")))
 		return (0);
 	parse_function = get_parse_func(tokens[0]);
 	if (!parse_function)
 	{
+		puts(tokens[0]);
 		ft_free_tab(tokens);
 		parser_die("Unknown data type.");
 	}
