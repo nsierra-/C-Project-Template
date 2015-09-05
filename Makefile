@@ -29,7 +29,8 @@ SRC_FILES	=	main.c \
 				tokens_utils.c \
 				obj_parse.c \
 				obj_print_data.c \
-				obj_delete_data.c
+				obj_delete_data.c \
+				is_property_defined.c
 
 FTLST_DIR	=	./ftlst
 LIBFT_DIR	=	./libft
